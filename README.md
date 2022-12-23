@@ -9,10 +9,10 @@ They're responsible for loading classes into memory.
 
 # Classloaders
 
-* Bootstrap ClassLoader: Loads the core JDK runtime classes
-* Extension ClassLoader: Loads Java Virtual Machine extensions. The classes loaded are defined by the value of the java.ext.dirs Java system property.
-* Application ClassLoader: Loads application classes. The classes loaded are defined by the value of the CLASSPATH environment variable or the -classpath Java option
-* User Defined ClassLoader: Loads classes from a custom source
+* Bootstrap ClassLoader: `BootClassLoader` - loads the core JDK runtime classes, such as rt.jar.
+* Extension ClassLoader: `PlatformClassLoader`, loads Java Virtual Machine extensions. The classes loaded are defined by the value of the java.ext.dirs Java system property.
+* App ClassLoader(System ClassLoader): `AppClassLoader`,  loads application classes. The classes loaded are defined by the value of the CLASSPATH environment variable or the -classpath Java option
+* User Defined ClassLoader: `URLClassLoader`, loads classes from a custom source, such as jar files, directories, or remote URLs.
 
 ![ClassLoader Layers](classloader-3-layers.png)
 
