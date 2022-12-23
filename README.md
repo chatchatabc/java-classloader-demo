@@ -19,6 +19,32 @@ They're responsible for loading classes into memory.
 # ClassLoader Hierarchy
 
 ![ClassLoader hierarchy](classloader-hierarchy.png)
+ 
+# Spring Boot ClassLoader
+                       
+```
++--- spring-boot-loader-play-0.0.1-snapshot.jar
+     +--- meta-inf
+     +--- boot-inf
+     |    +--- classes                            # 1 - project classes
+     |    |     +--- org.springframework.boot
+     |    |     | \--- springbootbanner.class     # this is our fix
+     |    |     | 
+     |    |     +--- pl.dk.loaderplay
+     |    |          \--- springbootloaderapplication.class
+     |    |
+     |    +--- lib                                # 2 - nested jar libraries
+     |          +--- javax.annotation-api-1.3.1
+     |          +--- spring-boot-2.0.0.m7.jar     # original banner class inside
+     |          \--- (...)
+     |
+     +--- org.springframework.boot.loader         # spring boot loader classes
+          +--- Jarlauncher.class
+          +--- LaunchedURLClassLoader.class
+          \--- (...)
+```
+
+ClassLoader: `org.springframework.boot.loader.LaunchedURLClassLoader`
 
 # References
 
