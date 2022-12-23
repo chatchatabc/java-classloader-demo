@@ -17,7 +17,11 @@ public class ClassLoaderTest {
     @BeforeAll
     public static void setUp() throws Exception {
         ClassLoader parentLoader = UserService.class.getClassLoader();
-        URL jarUrl = new File("../jar-1/target/jar-1-1.0.0-SNAPSHOT.jar").toURI().toURL();
+        final File jarFile = new File("../jar-1/target/jar-1-1.0.0-SNAPSHOT.jar");
+        if (!jarFile.exists()) {
+            throw new RuntimeException("jar file not found: " + jarFile.getAbsolutePath());
+        }
+        URL jarUrl = jarFile.toURI().toURL();
         customLoader = new URLClassLoader(new java.net.URL[]{jarUrl}, parentLoader);
     }
 
