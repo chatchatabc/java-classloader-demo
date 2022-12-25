@@ -10,7 +10,7 @@ They're responsible for loading classes into memory.
 # Classloaders
 
 * Bootstrap ClassLoader: `BootClassLoader` - loads the core JDK runtime classes, such as rt.jar.
-* Extension ClassLoader(Platform ClassLoader): `PlatformClassLoader`, loads Java Virtual Machine extensions. The classes loaded are defined by the value of the java.ext.dirs Java system property.
+* Extension ClassLoader(Platform ClassLoader): `PlatformClassLoader`, loads Java Virtual Machine extensions. The classes loaded are defined by the value of the java.ext.dirs(JDK 1.8) Java system property.
 * App ClassLoader(System ClassLoader): `AppClassLoader`,  loads application classes. The classes loaded are defined by the value of the CLASSPATH environment variable or the -classpath Java option
 * User Defined ClassLoader: `URLClassLoader`, loads classes from a custom source, such as jar files, directories, or remote URLs.
 
@@ -45,6 +45,10 @@ They're responsible for loading classes into memory.
 ```
 
 ClassLoader: `org.springframework.boot.loader.LaunchedURLClassLoader`
+      
+# Service Provider Interface (SPI)
+
+SPI: a feature for discovering and loading implementations matching a given interface - https://www.baeldung.com/java-spi
 
 # References
 
