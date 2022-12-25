@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>jar-2</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
 
     <name>jar-2</name>
     
